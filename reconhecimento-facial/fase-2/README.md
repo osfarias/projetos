@@ -14,13 +14,13 @@ O sistema captura vídeo da webcam, detecta rostos usando YOLOv8 finetunado e cl
 
 | Emoção | Emoção | Emoção | Emoção |
 |--------|--------|--------|--------|
-| 😠 Raiva | 😏 Desdenho | 🤢 Nojo | 😨 Medo |
-| 😊 Feliz | 😐 Neutro | 😢 Triste | 😲 Surpresa |
+| <i class="fa-solid fa-face-angry"></i> Raiva | <i class="fa-solid fa-face-meh"></i> Desdenho | <i class="fa-solid fa-face-dizzy"></i> Nojo | <i class="fa-solid fa-face-flushed"></i> Medo |
+| <i class="fa-solid fa-face-smile"></i> Feliz | <i class="fa-solid fa-face-meh-blank"></i> Neutro | <i class="fa-solid fa-face-sad-tear"></i> Triste | <i class="fa-solid fa-face-surprise"></i> Surpresa |
 
 ## Arquitetura
 
 ```
-Webcam → YOLOv8 (detecção de rostos) → CNN (classificação de emoção) → Exibição
+Webcam > YOLOv8 (detecção de rostos) > CNN (classificação de emoção) > Exibição
 ```
 
 - **Detector de rostos:** YOLOv8 finetunado com Face-Detection-Dataset e Wider Face
@@ -85,10 +85,10 @@ fase-2/
 
 ## Tecnologias
 
-- [PyTorch](https://pytorch.org/) — framework de deep learning
-- [Ultralytics YOLOv8](https://docs.ultralytics.com/) — detecção de objetos
-- [OpenCV](https://opencv.org/) — captura de vídeo e exibição
-- [Optuna](https://optuna.org/) — otimização de hiperparâmetros (treinamento)
+- [PyTorch](https://pytorch.org/) - framework de deep learning
+- [Ultralytics YOLOv8](https://docs.ultralytics.com/) - detecção de objetos
+- [OpenCV](https://opencv.org/) - captura de vídeo e exibição
+- [Optuna](https://optuna.org/) - otimização de hiperparâmetros (treinamento)
 
 ## Equipe 2
 
@@ -100,5 +100,5 @@ fase-2/
 
 ## Disciplina
 
-Sistemas de Visão Computacional — UFMA  
+Sistemas de Visão Computacional - UFMA  
 Prof. Dr. Geraldo Braz Júnior
