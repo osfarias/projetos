@@ -1,0 +1,82 @@
+===============================================================
+  PROTÓTIPO - Detecção de Emoções Faciais em Tempo Real
+  Equipe 2 - Fase 2 - Sistemas de Visão Computacional (UFMA)
+===============================================================
+
+DESCRIÇÃO
+---------
+Este protótipo usa a webcam para detectar rostos (via YOLOv8 finetunado)
+e classificar emoções faciais em tempo real usando uma CNN treinada com
+otimização de hiperparâmetros via Optuna.
+
+Emoções reconhecidas: raiva, desdenho, nojo, medo, feliz, neutro, triste, surpresa.
+
+
+ESTRUTURA DE ARQUIVOS
+---------------------
+fase-2/
+├── reconhecimento_emocoes_webcam.py   <- script principal (protótipo)
+├── modelo-optuna/
+│   └── modelo-eq-2-svc-fase-2-40-ep-reg-acc-6678.pth  <- modelo de emoções
+├── modelo-yolo/
+│   └── best.pt                        <- YOLO finetunado para detecção de rostos
+├── requirements.txt                   <- dependências do projeto
+└── read-me.txt                        <- este arquivo
+
+
+REQUISITOS
+----------
+- Python 3.10+ (testado com 3.12)
+- Webcam funcional
+- GPU com CUDA é opcional (roda em CPU também, mas mais lento)
+
+
+COMO RODAR
+----------
+
+1. Criar ambiente virtual (recomendado):
+
+   python -m venv .venv
+   source .venv/bin/activate        (Linux/Mac)
+   .venv\Scripts\activate           (Windows)
+
+2. Instalar dependências:
+
+   pip install -r requirements.txt
+
+   Obs: se tiver GPU NVIDIA com CUDA, instale o PyTorch com suporte CUDA:
+   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+
+3. Rodar o protótipo:
+
+   python reconhecimento_emocoes_webcam.py
+
+4. Usar:
+   - Posicione seu rosto na frente da webcam
+   - A emoção detectada aparece em cima do retângulo verde
+   - Pressione Q (ou q) para encerrar
+
+
+PROBLEMAS COMUNS
+----------------
+
+* "ERRO: Não foi possível abrir a webcam."
+  -> Verifique se a câmera está conectada e não está sendo usada
+     por outro programa (Zoom, Meet, etc.)
+
+* Janela abre mas fica preta:
+  -> Algumas webcams demoram uns segundos pra inicializar.
+     Aguarde um pouco.
+
+* Muito lento (poucos FPS):
+  -> Sem GPU o modelo roda em CPU, o que é mais lento.
+  -> Feche outros programas pesados.
+
+* Emoção errada aparece:
+  -> O modelo tem ~66.78% de acurácia. Não é perfeito.
+     Funciona melhor com expressões bem definidas e boa iluminação.
+
+
+MEMBROS DA EQUIPE
+-----------------
+Arnaud, Guilherme, Osevaldo, Wesley e Yure
