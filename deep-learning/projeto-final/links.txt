@@ -1,0 +1,11 @@
+Notebook no kaggle
+https://www.kaggle.com/code/osevaldo/pf-idl-dev-conv2d-derma-mnist-ham-10000-osf-crossv
+
+Projeto no github
+https://github.com/osfarias/projetos
+
+Dataset HAM100000 (6GB)
+import kagglehub
+# Download latest version on kaggle platform
+path = kagglehub.dataset_download("kmader/skin-cancer-mnist-ham10000")
+print("Path to dataset files:", path)
